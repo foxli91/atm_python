@@ -1,11 +1,38 @@
 import os
+import time
+
+start = time.time()
 # 这个是修改文件的一个demo
 with open('C:\\Users\\Administrator.SC-201712251822\\Desktop\\大气资料\\T_AIR_SITE_HOUR_METEOROLOGY.sql', mode='rt',
           encoding='utf-8') as f, \
-        open('C:\\Users\\Administrator.SC-201712251822\\Desktop\\大气资料\\T_AIR_SITE_HOUR_METEOROLOGY_BAK.sql', mode='wt',
-             encoding='utf-8') as f2:
+        open('C:\\Users\\Administrator.SC-201712251822\\Desktop\\大气资料\\T_AIR_SITE_HOUR_METEOROLOGY_BAK1.sql', mode='wt',
+             encoding='utf-8') as f1, open(
+    'C:\\Users\\Administrator.SC-201712251822\\Desktop\\大气资料\\T_AIR_SITE_HOUR_METEOROLOGY_BAK2.sql', mode='wt',
+    encoding='utf-8') as f2, open(
+    'C:\\Users\\Administrator.SC-201712251822\\Desktop\\大气资料\\T_AIR_SITE_HOUR_METEOROLOGY_BAK3.sql', mode='wt',
+    encoding='utf-8') as f3, open(
+    'C:\\Users\\Administrator.SC-201712251822\\Desktop\\大气资料\\T_AIR_SITE_HOUR_METEOROLOGY_BAK4.sql', mode='wt',
+    encoding='utf-8') as f4, open(
+    'C:\\Users\\Administrator.SC-201712251822\\Desktop\\大气资料\\T_AIR_SITE_HOUR_METEOROLOGY_BAK5.sql', mode='wt',
+    encoding='utf-8') as f5:
     c = 0
     for line in f:
+
+        if c <= 1000000:
+            f1.write(line.replace('\"DB_GSODS_AREV_BASE\".', ''))
+        elif c > 1000000 and c <= 2000000:
+            f2.write(line.replace('\"DB_GSODS_AREV_BASE\".', ''))
+        elif c > 2000000 and c <= 3000000:
+            f3.write(line.replace('\"DB_GSODS_AREV_BASE\".', ''))
+        elif c > 3000000 and c <= 4000000:
+            f4.write(line.replace('\"DB_GSODS_AREV_BASE\".', ''))
+        else:
+            f5.write(line.replace('\"DB_GSODS_AREV_BASE\".', ''))
         c += 1
-        f2.write(line.replace('\"DB_GSODS_AREV_BASE\".', ''))
+    f1.flush()
     f2.flush()
+    f3.flush()
+    f4.flush()
+    f5.flush()
+end = time.time()
+print(end - start)
