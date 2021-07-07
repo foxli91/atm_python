@@ -1,4 +1,5 @@
 class Student:
+    __sex = 'female'
 
     def __init__(self, name, birth, address, money, courses: []) -> None:
         super().__init__()
@@ -17,3 +18,9 @@ class Student:
 
     def get_money(self):
         return self.__money
+
+    '''设置金额'''
+
+    def set_money(self, money):
+        self.__money = money
+# Student.__sex = 'aaa'
