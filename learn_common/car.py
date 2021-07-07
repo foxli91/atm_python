@@ -21,6 +21,9 @@ class Car:
         print('say hello 啊')
         print(f'self-owner {self.owner}')
 
+    def dog_bk(self):
+        self.pet.bark()
+
     def set_dog(self, dog: Dog):
         self.pet = dog
         self.pet.bark()
@@ -41,6 +44,7 @@ class Car:
 
 dog = Dog('就是', 1)
 bench = Car('黑色', 78904.6, 'SUV', '奔驰', dog)
+bench.dog_bk()
 #
 # bench.set_dog(dog)
 print(bench)
