@@ -1,13 +1,19 @@
 class Student:
-    name = '张安琪'
 
-    def get_name_str(self):
-        return self.name
+    def __init__(self, name, birth, address, money, courses: []) -> None:
+        super().__init__()
+        self.name = name
+        self.birth = birth
+        self.address = address
+        self.__money = money
+        self.courses = courses
 
-    def spe(self):
-        print('-------哈哈哈')
+    def __str__(self) -> str:
+        cl = '['
+        for i in self.courses:
+            cl += i.__str__()
+        cl += ']'
+        return f'学生名称：{self.name},学生生日：{self.birth},学生家庭地址：{self.address},报的课程是{cl}'
 
-
-st = Student()
-print(st.name)
-st.spe()
+    def get_money(self):
+        return self.__money
