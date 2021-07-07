@@ -1,6 +1,7 @@
 from typing import Any
 
-from Dog import Dog
+from dog import Dog
+
 
 class Car:
     color = ''
@@ -9,12 +10,12 @@ class Car:
     brand = ''
     owner = 'Jimmy'
 
-    def __init__(self, color, price, car_type, brand, dog: Dog):
+    def __init__(self, color, price, car_type, brand, pet: Dog):
         self.color = color
         self.price = price
         self.car_type = car_type
         self.brand = brand
-        self.pet = dog
+        self.pet = pet
 
     def say_hello(self):
         print('say hello 啊')
