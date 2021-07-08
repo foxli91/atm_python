@@ -24,6 +24,14 @@ class Man:
         del self.__wife
 
 
+class Boy(Man):
+
+    def __init__(self, name, height, sex, weight, speak, father) -> None:
+        super().__init__(name, height, sex, weight)
+        self.speak = speak
+        self.father = father
+
+
 import print_common
 
 m = Man('张三', 1.75, '男', 75)

@@ -9,3 +9,7 @@ class Dog:
 
     def bark(self):
         print(f'我是{self.name},我在狂吠')
+
+
+print(Dog.__base__)
+print(Dog.__bases__)
