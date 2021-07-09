@@ -22,3 +22,9 @@ print(getattr(st1, 'get_money'))
 print(getattr(Student, 'get_money'))
 
 print(getattr(st1, 'get_money')())
+
+st1.__setattr__('money', 600000)
+print(st1.get_money())
+
+st1.__setattr__('name', 600000)
+print(st1.name)

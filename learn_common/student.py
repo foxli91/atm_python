@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Student:
     __sex = 'female'
 
@@ -23,4 +26,11 @@ class Student:
 
     def set_money(self, money):
         self.__money = money
+
+    # def __setattr__(self, name: str, value: Any) -> None:
+    #     super().__setattr__(name, value)
+
+
 # Student.__sex = 'aaa'
+
+print(type(Student))
