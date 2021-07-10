@@ -36,7 +36,7 @@ sk = sorted(dog_list, key=lambda dg: dg.age)
 for s in sk:
     print(s)
 print_common.ps()
-fz=reversed(sk)
+fz = reversed(sk)
 for s in fz:
     print(s)
 print_common.ps()
@@ -45,5 +45,6 @@ for i in names:
     print(i)
 
 # import 'time' # 错误的用法
-ts=__import__('time')
+ts = __import__('time')
 print(ts.time())
+
