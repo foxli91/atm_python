@@ -27,7 +27,10 @@ class Sub1(Parent1):
 
 
 class Sub2(Parent1, Parent2):
-    pass
+    # pass
+    def prf(self):
+        print()
+        print(self.x)
 
 
 s1 = Sub1()

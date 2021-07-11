@@ -7,6 +7,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # 目的生成socket
 server.bind(ip_port)  # 绑定ip和端口
 server.listen(5)  # 手机待机
 while True:
+    time.sleep(10)
     print('服务启动开始接收消息了')
     conn, addr = server.accept()  # 阻塞的等待一旦有连接进来就会拿到对应的数据
     # print(conn)
@@ -21,6 +22,6 @@ while True:
 
     conn.close()  # 关闭与客户端的连接
     # 这里模拟睡眠来检查能够同时发请求 看看半连接池的处理
-    # time.sleep(10)
+
 
 # server.close()  # 服务端关闭
