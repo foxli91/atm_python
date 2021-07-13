@@ -34,3 +34,5 @@ class Student:
 # Student.__sex = 'aaa'
 
 print(type(Student))
+import os
+print(os.cpu_count())

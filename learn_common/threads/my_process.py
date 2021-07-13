@@ -1,4 +1,18 @@
-from multiprocessing import Process
+from multiprocessing import Process, RLock, Lock
+from threading import Semaphore
+
+# mutexA=mutexB=RLock()
+
+sm = Semaphore(5)  # 容量
+
+
+def ts():
+    # 抢锁
+    sm.acquire()
+
+    print('业务......')
+    # 释放锁
+    sm.release()
 
 
 class MyProcess(Process):
