@@ -20,16 +20,28 @@ def select_money(user_id: str) -> float:
     return float(sleep ** 2)
 
 
+def result_back(res: Future) -> float:
+    moneys = res.result()
+    print(f'获取的金钱是{moneys}')
+    return moneys
+
+
 ps()
 # res = select_money('1232344')
 # print(f'得到的金钱是{res}')
-result_list = []
-for i in range(10):
-    ids = f'usi{i}'
-    res = thread_pool.submit(select_money, ids)
-    result_list.append(res)
+if __name__ == '__main__':
 
-for s in result_list:
-    print(f'类型是{type(s)}')
-    res = s.result()
-    print(f'获得的结果是{res}')
+    for i in range(10):
+        ids = f'usi{i}'
+        thread_pool.submit(select_money, ids).add_done_callback(result_back)
+
+# result_list = []
+# for i in range(10):
+#     ids = f'usi{i}'
+#     res = thread_pool.submit(select_money, ids)
+#     result_list.append(res)
+#
+# for s in result_list:
+#     print(f'类型是{type(s)}')
+#     res = s.result()
+#     print(f'获得的结果是{res}')
