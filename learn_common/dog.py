@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Dog:
     name = ''
     age = 1
@@ -13,7 +16,8 @@ class Dog:
     def bark(self):
         print(f'我是{self.name},我在狂吠')
 
-
+s=Dog('哈希',15)
+print(s.__getattribute__('name'))
 # print(Dog.__base__)
 # print(Dog.__bases__)
 # dog1 = Dog('hll1', 5)
